@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <nav>
+        <section class="navigation-logo">
+            <img src="logo.png" alt="logo" srcset="">
+        </section>
+        <ul class="navigation-items">
+            <li>RELAÇÃO DE PEDIDOS</li>
+            <li>RELAÇÃO DE ENTREGADORES</li>
+        </ul>
+        <section class="navigation-menu-anchor">
+            <img src="open-menu.png" alt="" class="navigation-menu-anchor-open">
+            <img src="close-menu.png" alt="" class="navigation-menu-anchor-close">
+        </section>
+    </nav>
+    <main>
+        <section class="dashboard">
+            <div class="dashboard-big-numbers">
+                <div class="dashboard-big-numbers-item">
+                    <div class="dashboard-big-numbers-item-info">
+                        <span>LUCRO TOTAL</span>
+                        <p>R$ 6500,00</p>
+                    </div>
+                    <img src="money.png" alt="" srcset="">
+                </div>
+                <div class="dashboard-big-numbers-item">
+                    <div class="dashboard-big-numbers-item-info">
+                        <span>MELHOR DIA - 13/02</span>
+                        <p>R$ 6500,00</p>
+                    </div>
+                    <img src="money.png" alt="" srcset="">
+                </div>
+                <div class="dashboard-big-numbers-item">
+                    <div class="dashboard-big-numbers-item-info">
+                        <span>PIOR DIA - 27/02</span>
+                        <p>R$ 6500,00</p>
+                    </div>
+                    <img src="money.png" alt="" srcset="">
+                </div>
+            </div>
+            <div class="chart">
+                <p>Relação do total de entregas no mês  (fevereiro)</p>
+                <canvas id="myChart" style="height: 100%; width: 100%;"></canvas>
+            </div>
+        </section>   
+        <section class="orders-relation">
+            <p>RELAÇÃO DE PEDIDOS</p>
+            <section class="orders">
+                <div class="orders-item">
+                    <img src="food.png" alt="">
+                    <div class="orders-item-address">
+                        <p>ENDEREÇO</p>
+                        <span>Rua Mariinha Paiva, Bairro Sinhá Sabóia, n 362.</span>
+                    </div>
+                    <div class="orders-item-delivery">
+                        <P>ENTREGADOR</P>
+                        <span>Francisco Tiago Gadelha Lino</span>
+                    </div>
+                    <div class="orders-item-price">
+                        <p>VALOR</p>
+                        <span>R$ 150,23</span>
+                    </div>
+                </div>
+                <div class="orders-item">
+                    <img src="food.png" alt="">
+                    <div class="orders-item-address">
+                        <p>ENDEREÇO</p>
+                        <span>Rua Mariinha Paiva, Bairro Sinhá Sabóia, n 362.</span>
+                    </div>
+                    <div class="orders-item-delivery">
+                        <P>ENTREGADOR</P>
+                        <span>Francisco Tiago Gadelha Lino</span>
+                    </div>
+                    <div class="orders-item-price">
+                        <p>VALOR</p>
+                        <span>R$ 150,23</span>
+                    </div></div>
+                <div class="orders-item">
+                    <img src="food.png" alt="">
+                    <div class="orders-item-address">
+                        <p>ENDEREÇO</p>
+                        <span>Rua Mariinha Paiva, Bairro Sinhá Sabóia, n 362.</span>
+                    </div>
+                    <div class="orders-item-delivery">
+                        <P>ENTREGADOR</P>
+                        <span>Francisco Tiago Gadelha Lino</span>
+                    </div>
+                    <div class="orders-item-price">
+                        <p>VALOR</p>
+                        <span>R$ 150,23</span>
+                    </div></div>
+                <div class="orders-item">
+                    <img src="food.png" alt="">
+                    <div class="orders-item-address">
+                        <p>ENDEREÇO</p>
+                        <span>Rua Mariinha Paiva, Bairro Sinhá Sabóia, n 362.</span>
+                    </div>
+                    <div class="orders-item-delivery">
+                        <P>ENTREGADOR</P>
+                        <span>Francisco Tiago Gadelha Lino</span>
+                    </div>
+                    <div class="orders-item-price">
+                        <p>VALOR</p>
+                        <span>R$ 150,23</span>
+                    </div></div>
+            </section>
+        </section> 
+        <section class="delivery-relation">
+            <p>RELAÇÃO DE ENTREGADORES</p>
+            <section class="delivery">
+                <div class="delivery-item">
+                    <img src="user.png" alt="">
+                    <div class="delivery-item-address">
+                        <p>ENTREGADOR</p>
+                        <span>Francisco Tiago Gadelha Lino</span>
+                    </div>
+                    <div class="delivery-item-delivery">
+                        <P>TOTAL DE ENTREGAS</P>
+                        <span>12</span>
+                    </div>
+                    <div class="delivery-item-price">
+                        <p>TOTAL PARA RECEBER</p>
+                        <span>R$ 150,23</span>
+                    </div>
+                </div>
+                <div class="delivery-item">
+                    <img src="user.png" alt="">
+                    <div class="delivery-item-address">
+                        <p>ENTREGADOR</p>
+                        <span>Francisco Tiago Gadelha Lino</span>
+                    </div>
+                    <div class="delivery-item-delivery">
+                        <P>TOTAL DE ENTREGAS</P>
+                        <span>12</span>
+                    </div>
+                    <div class="delivery-item-price">
+                        <p>TOTAL PARA RECEBER</p>
+                        <span>R$ 150,23</span>
+                    </div>
+                </div>
+                <div class="delivery-item">
+                    <img src="user.png" alt="">
+                    <div class="delivery-item-address">
+                        <p>ENTREGADOR</p>
+                        <span>Francisco Tiago Gadelha Lino</span>
+                    </div>
+                    <div class="delivery-item-delivery">
+                        <P>TOTAL DE ENTREGAS</P>
+                        <span>12</span>
+                    </div>
+                    <div class="delivery-item-price">
+                        <p>TOTAL PARA RECEBER</p>
+                        <span>R$ 150,23</span>
+                    </div>
+                </div>
+                <div class="delivery-item">
+                    <img src="user.png" alt="">
+                    <div class="delivery-item-address">
+                        <p>ENTREGADOR</p>
+                        <span>Francisco Tiago Gadelha Lino</span>
+                    </div>
+                    <div class="delivery-item-delivery">
+                        <P>TOTAL DE ENTREGAS</P>
+                        <span>12</span>
+                    </div>
+                    <div class="delivery-item-price">
+                        <p>TOTAL PARA RECEBER</p>
+                        <span>R$ 150,23</span>
+                    </div>
+                </div>
+            </section>
+        </section> 
+       
+    </main>
+    <footer>
+        <img src="logo.png" alt="" srcset="">
+    </footer>
+    <script src="index.js" type="module"></script>
+</body>
+</html>

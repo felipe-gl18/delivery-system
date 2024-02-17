@@ -1,0 +1,430 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #EEEFF2;
+    padding: 0px 0px 0px 0px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 21px;
+    border-radius: 50px;
+    background-color: #302B2B;
+    width: 90%;
+    height: 99px;
+    padding: 0px 150px 0px 50px;
+    z-index: 1;
+}
+
+nav > .navigation-items{
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-variation-settings:
+      "slnt" 0;
+    color: white;
+    display: flex;
+    width: 345px;
+    font-size: 12px;
+    gap: 30px;  
+    align-items: center;
+    list-style: none;
+}
+
+nav > .navigation-items > li{
+    cursor: pointer;
+}
+
+.navigation-menu-anchor {
+    display: none;
+}
+
+.navigation-menu-anchor > .navigation-menu-anchor-close{
+    display: none;
+}
+
+main {
+    padding-bottom: 100px;
+}
+
+main > .dashboard {
+    left: 0;
+    top: -100px;
+    padding-top: 320px;
+    padding-bottom: 52px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 47px;
+    justify-content: center;
+    width: 100%;
+    z-index: 0;
+    border-radius: 64px;
+    background-color: white;
+}
+
+main > .dashboard > .chart {
+    display: flex;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-variation-settings:
+      "slnt" 0;
+    flex-direction: column;
+    justify-content: center;
+    width: 90%;
+    height: 360px;
+}
+
+main > .dashboard > .chart > p {
+    margin-left: 100px;
+    margin-bottom: 13px;
+}
+
+main > .dashboard > .dashboard-big-numbers {
+    display: grid;
+    grid-template-columns: 354px 354px 354px;
+    justify-content: space-around;
+    gap: 46px;
+    width: 90%;
+}
+
+main > .dashboard > .dashboard-big-numbers > .dashboard-big-numbers-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #D9D9D9;
+    border-radius: 20px;
+    padding: 26px 25px 26px 35px;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-variation-settings:
+      "slnt" 0;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+main > .dashboard > .dashboard-big-numbers > .dashboard-big-numbers-item > .dashboard-big-numbers-item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+main > .dashboard > .dashboard-big-numbers > .dashboard-big-numbers-item > .dashboard-big-numbers-item-info > span {
+    font-size: 13px;
+}
+
+
+main > .dashboard > .dashboard-big-numbers > .dashboard-big-numbers-item > .dashboard-big-numbers-item-info > p {
+    font-size: 20px;
+}
+
+main > .dashboard > .dashboard-big-numbers > .dashboard-big-numbers-item > img{
+    width: 88px;
+    height: 79px;
+    
+}
+
+main > .orders-relation {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-variation-settings:
+      "slnt" 0;
+    margin-top: 732px;
+}
+
+.orders {
+    margin-top: 49px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 32px;
+}
+
+
+.orders-relation > p {
+    width: 180px;
+    height: 46px;
+    border-bottom:  1px solid black;
+}
+
+.orders > .orders-item {
+    padding: 17px 22px 32px 22px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 11px;
+    font-size: 12px;
+    flex-direction: column;
+}
+
+.orders-item > img {
+    margin: 17px 0px 17px 0px;
+    width: 88px;
+    height: 88px;
+}
+
+.orders-item > div {
+    width: 96%;
+   display: flex;
+   flex-direction: column;
+   gap: 6px
+}
+
+.orders-item > div > span {
+    opacity: 0.6;
+}
+
+.orders-item-price > span {
+    opacity: 1;
+    margin-top: 11px;
+    font-size: 18px;
+    color: #329A74;
+}
+
+main > .delivery-relation {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-variation-settings:
+      "slnt" 0;
+    margin-top: 126px;
+}
+
+.delivery {
+    margin-top: 49px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 32px;
+}
+
+
+.delivery-relation > p {
+    width: 242px;
+    height: 46px;
+    border-bottom:  1px solid black;
+}
+
+.delivery > .delivery-item {
+    padding: 17px 22px 32px 22px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 11px;
+    font-size: 12px;
+    flex-direction: column;
+}
+
+.delivery-item > img {
+    margin: 17px 0px 17px 0px;
+    width: 88px;
+    height: 88px;
+}
+
+.delivery-item > div {
+    width: 96%;
+   display: flex;
+   flex-direction: column;
+   gap: 6px
+}
+
+
+.delivery-item > div > span {
+    opacity: 0.6;
+}
+
+
+.delivery-item-price > span {
+    opacity: 1;
+    margin-top: 11px;
+    font-size: 18px;
+    color: #329A74;
+}
+
+.modal {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    background-color: black;
+    height: 100%;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #302B2B;
+    height: 162px;
+}
+
+@media screen and (max-width: 1236px) {
+    main > .dashboard > .dashboard-big-numbers {
+        display: grid;
+        grid-template-columns: 354px 354px;
+        justify-content: space-around;
+        gap: 46px;
+        width: 90%;
+    }
+
+    main > .orders-relation {
+        font-family: "Inter", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 900;
+        font-style: normal;
+        font-variation-settings:
+          "slnt" 0;
+        margin-top: 932px;
+    }
+    
+    .orders {
+        margin-top: 49px;
+        display: grid;
+        grid-template-columns: 306px 306px 306px;
+        gap: 32px;
+    }
+    
+    .delivery {
+        margin-top: 49px;
+        display: grid;
+        grid-template-columns: 306px 306px 306px;
+        gap: 32px;
+    }
+}
+
+@media screen and (max-width: 1029px){
+    .orders {
+        margin-top: 49px;
+        display: grid;
+        grid-template-columns: 306px 306px 306px;
+        gap: 12px;
+    }
+
+    .delivery {
+        margin-top: 49px;
+        display: grid;
+        grid-template-columns: 306px 306px 306px;
+        gap: 12px;
+    }
+}
+
+@media screen and (max-width: 965px) {
+    .orders {
+        margin-top: 49px;
+        display: grid;
+        grid-template-columns: 306px  306px ;
+        gap: 32px;
+    }
+
+    .delivery {
+        margin-top: 49px;
+        display: grid;
+        grid-template-columns: 306px  306px ;
+        gap: 32px;
+    }
+}
+
+@media screen and (max-width: 774px) {
+    main > .dashboard > .dashboard-big-numbers {
+        display: grid;
+        grid-template-columns: 354px;
+        justify-content: space-around;
+        gap: 46px;
+        width: 90%;
+    }
+
+    main > .orders-relation {
+        font-family: "Inter", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 900;
+        font-style: normal;
+        font-variation-settings:
+          "slnt" 0;
+        margin-top: 1120px;
+    }
+}
+
+@media screen and (max-width: 770px) {
+    nav {
+        padding: 0px 50px 0px 50px;
+    }
+}
+
+@media screen and (max-width: 675px) {
+    .orders {
+        margin-top: 49px;
+        display: grid;
+        grid-template-columns: 306px ;
+        gap: 32px;
+    }
+
+    .delivery {
+        margin-top: 49px;
+        display: grid;
+        grid-template-columns: 306px ;
+        gap: 32px;
+    }
+}
+
+@media screen and (max-width: 630px) {
+    nav > .navigation-items {
+        left: 0;
+        top: 152px;
+        width: 100%;
+        display: none;
+        background-color: rgb(235, 228, 228);
+        color: black;
+        position: absolute;
+        gap: 32px;
+        padding: 40px;
+        flex-direction: column;
+        box-shadow: 4px 10px 10px rgba(0, 0, 0, 0.3);
+        animation: mobileLogoAnimation 3s ease-in-out;
+    }
+    .navigation-menu-anchor {
+        display: flex;
+    }
+}
+
+
+@media screen and (max-width: 388px) {
+    main > .dashboard > .dashboard-big-numbers {
+        display: grid;
+        grid-template-columns: 314px;
+        justify-content: space-around;
+        gap: 46px;
+        width: 90%;
+    }
+}
+
+
+@keyframes mobileLogoAnimation {
+    from{
+        margin-left: -100px;
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
