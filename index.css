@@ -158,14 +158,50 @@ main > .orders-relation {
     gap: 32px;
 }
 
-
-.orders-relation > p {
-    width: 180px;
-    height: 46px;
-    border-bottom:  1px solid black;
+.orders-relation > div > .lines {
+    display: flex;
+    gap: 10px
+}
+.orders-relation > div > .lines > #orders-relation-first-line {
+    margin-top: 10px;
+    height: 1px;
+    width: 110px;
+    background-color: black;
 }
 
-.orders > .orders-item {
+.orders-relation > div > .lines > #orders-relation-second-line {
+    margin-top: 10px;
+    height: 1px;
+    width: 56px;
+    background-color: black;
+}
+
+
+.delivery-relation > div > .lines {
+    display: flex;
+    gap: 10px
+}
+.delivery-relation > div > .lines > #orders-relation-first-line {
+    margin-top: 10px;
+    height: 1px;
+    width: 172px;
+    background-color: black;
+}
+
+.delivery-relation > div > .lines > #orders-relation-second-line {
+    margin-top: 10px;
+    height: 1px;
+    width: 56px;
+    background-color: black;
+}
+
+.orders-item {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-variation-settings:
+      "slnt" 0;
     padding: 17px 22px 32px 22px;
     background-color: white;
     display: flex;
@@ -213,7 +249,7 @@ main > .delivery-relation {
 .delivery {
     margin-top: 49px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 306px 306px 306px 306px;
     gap: 32px;
 }
 
@@ -224,7 +260,13 @@ main > .delivery-relation {
     border-bottom:  1px solid black;
 }
 
-.delivery > .delivery-item {
+.delivery-item {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-variation-settings:
+      "slnt" 0;
     padding: 17px 22px 32px 22px;
     background-color: white;
     display: flex;
@@ -232,6 +274,7 @@ main > .delivery-relation {
     align-items: center;
     gap: 11px;
     font-size: 12px;
+    width: 306px;
     flex-direction: column;
 }
 
@@ -262,12 +305,62 @@ main > .delivery-relation {
 }
 
 .modal {
+    display: none;
+    justify-content: center;
+    align-items: center;
     top: 0;
     left: 0;
-    position: absolute;
+    position: fixed;
     width: 100%;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.226);
     height: 100%;
+    z-index: 3;
+}
+
+.modal-delivery {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.226);
+    height: 100%;
+    z-index: 3;
+}
+
+.modal-close-anchor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: -90%;
+    width: 29px;
+    height: 29px;
+    border-radius: 50%;
+    background-color: black;
+}
+
+.modal-close-anchor > img {
+    width: 60%;
+    height: 60%;
+}
+
+
+.modal-delivery-close-anchor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: -90%;
+    width: 29px;
+    height: 29px;
+    border-radius: 50%;
+    background-color: black;
+}
+
+.modal-delivery-close-anchor > img {
+    width: 60%;
+    height: 60%;
 }
 
 footer{

@@ -1,5 +1,23 @@
 import "https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js";
 
+const ordersRelationNav = document.querySelector(".orders-relation-nav");
+const deliveryRelationNav = document.querySelector(".delivery-relation-nav");
+
+const ordersRelation = document.querySelector(".orders-relation");
+const deliveryRelation = document.querySelector(".delivery-relation");
+
+const openModal = document.querySelector(".modal-close-anchor");
+
+const openDeliveryModal = document.querySelector(
+  ".modal-delivery-close-anchor"
+);
+
+const modal = document.querySelector(".modal");
+const deliveryModal = document.querySelector(".modal-delivery");
+
+const ordersItem = document.querySelectorAll(".orders-item");
+const deliveryItem = document.querySelectorAll(".delivery-item");
+
 const openMobileNavigation = document.querySelector(
   ".navigation-menu-anchor-open"
 );
@@ -8,6 +26,14 @@ const closeMobileNavigation = document.querySelector(
 );
 
 const navigation = document.querySelector(".navigation-items");
+
+ordersRelationNav.addEventListener("click", () => {
+  ordersRelation.scrollIntoView({ behavior: "smooth" });
+});
+
+deliveryRelationNav.addEventListener("click", () => {
+  deliveryRelation.scrollIntoView({ behavior: "smooth" });
+});
 
 openMobileNavigation.addEventListener("click", () => {
   navigation.style.display = "flex";
@@ -19,6 +45,50 @@ closeMobileNavigation.addEventListener("click", () => {
   navigation.style.display = "none";
   openMobileNavigation.style.display = "flex";
   closeMobileNavigation.style.display = "none";
+});
+
+openModal.addEventListener("click", () => {
+  modal.style.display = "none";
+});
+
+openDeliveryModal.addEventListener("click", () => {
+  document.querySelector(".modal-delivery").style.display = "none";
+});
+
+ordersItem[0].addEventListener("click", () => {
+  document.querySelector(".modal").style.display = "flex";
+});
+
+ordersItem[1].addEventListener("click", () => {
+  document.querySelector(".modal").style.display = "flex";
+});
+
+ordersItem[2].addEventListener("click", () => {
+  document.querySelector(".modal").style.display = "flex";
+});
+
+ordersItem[3].addEventListener("click", () => {
+  document.querySelector(".modal").style.display = "flex";
+});
+
+openDeliveryModal.addEventListener("click", () => {
+  document.querySelector(".modal-delivery").style.display = "none";
+});
+
+deliveryItem[0].addEventListener("click", () => {
+  document.querySelector(".modal-delivery").style.display = "flex";
+});
+
+deliveryItem[1].addEventListener("click", () => {
+  document.querySelector(".modal-delivery").style.display = "flex";
+});
+
+deliveryItem[2].addEventListener("click", () => {
+  document.querySelector(".modal-delivery").style.display = "flex";
+});
+
+deliveryItem[3].addEventListener("click", () => {
+  document.querySelector(".modal-delivery").style.display = "flex";
 });
 
 const ctx = document.getElementById("myChart");

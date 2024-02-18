@@ -12,8 +12,8 @@
             <img src="logo.png" alt="logo" srcset="">
         </section>
         <ul class="navigation-items">
-            <li>RELAÇÃO DE PEDIDOS</li>
-            <li>RELAÇÃO DE ENTREGADORES</li>
+            <li class="orders-relation-nav">RELAÇÃO DE PEDIDOS</li>
+            <li class="delivery-relation-nav">RELAÇÃO DE ENTREGADORES</li>
         </ul>
         <section class="navigation-menu-anchor">
             <img src="open-menu.png" alt="" class="navigation-menu-anchor-open">
@@ -51,7 +51,13 @@
             </div>
         </section>   
         <section class="orders-relation">
-            <p>RELAÇÃO DE PEDIDOS</p>
+            <div>
+                <p>RELAÇÃO DE PEDIDOS</p>
+                <div class="lines">
+                    <div id="orders-relation-first-line"></div>
+                    <div id="orders-relation-second-line"></div>
+                </div>
+            </div>
             <section class="orders">
                 <div class="orders-item">
                     <img src="food.png" alt="">
@@ -113,7 +119,13 @@
             </section>
         </section> 
         <section class="delivery-relation">
-            <p>RELAÇÃO DE ENTREGADORES</p>
+            <div>
+                <p>RELAÇÃO DE ENTREGADORES</p>
+                <div class="lines">
+                    <div id="orders-relation-first-line"></div>
+                    <div id="orders-relation-second-line"></div>
+                </div>
+            </div>
             <section class="delivery">
                 <div class="delivery-item">
                     <img src="user.png" alt="">
@@ -177,7 +189,42 @@
                 </div>
             </section>
         </section> 
-       
+        <section class="modal">
+            <div class="orders-item">
+                <section class="modal-close-anchor"><img src="close-menu.png" alt="" srcset=""></section>
+                <img src="food.png" alt="">
+                <div class="orders-item-address">
+                    <p>ENDEREÇO</p>
+                    <span>Rua Mariinha Paiva, Bairro Sinhá Sabóia, n 362.</span>
+                </div>
+                <div class="orders-item-delivery">
+                    <P>ENTREGADOR</P>
+                    <span>Francisco Tiago Gadelha Lino</span>
+                </div>
+                <div class="orders-item-price">
+                    <p>VALOR</p>
+                    <span>R$ 150,23</span>
+                </div>
+            </div>
+        </section>
+        <section class="modal-delivery">                
+            <div class="delivery-item">
+                <section class="modal-delivery-close-anchor"><img src="close-menu.png" alt="" srcset=""></section>
+                <img src="user.png" alt="">
+                <div class="delivery-item-address">
+                    <p>ENTREGADOR</p>
+                    <span>Francisco Tiago Gadelha Lino</span>
+                </div>
+                <div class="delivery-item-delivery">
+                    <P>TOTAL DE ENTREGAS</P>
+                    <span>12</span>
+                </div>
+                <div class="delivery-item-price">
+                    <p>TOTAL PARAf RECEBER</p>
+                    <span>R$ 150,23</span>
+                </div>
+            </div>
+        </section>
     </main>
     <footer>
         <img src="logo.png" alt="" srcset="">
