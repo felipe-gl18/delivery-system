@@ -70,12 +70,50 @@ function handleOpenDeliveryModal() {
   });
 }
 
+function handleAddOrderModal() {
+  const addOrderModal = document.querySelector(".add-order-modal");
+  const openAddOrderModal = document.querySelector(
+    ".orders-relation > div > button"
+  );
+  const closeAddOrderModal = document.querySelector(
+    ".add-order-modal-close-anchor"
+  );
+
+  openAddOrderModal.addEventListener("click", () => {
+    addOrderModal.style.display = "flex";
+  });
+
+  closeAddOrderModal.addEventListener("click", () => {
+    addOrderModal.style.display = "none";
+  });
+}
+
+function handleAddDeliveryModal() {
+  const addDeliveryModal = document.querySelector(".add-delivery-modal");
+  const openAddDeliveryModal = document.querySelector(
+    ".delivery-relation > div > button"
+  );
+  const closeAddDeliveryModal = document.querySelector(
+    ".add-delivery-modal-close-anchor"
+  );
+
+  openAddDeliveryModal.addEventListener("click", () => {
+    addDeliveryModal.style.display = "flex";
+  });
+
+  closeAddDeliveryModal.addEventListener("click", () => {
+    addDeliveryModal.style.display = "none";
+  });
+}
+
 handleOpenMobileNavigation();
 handleCloseMobileNavigation();
 handleScrollingIntoOrdersSection();
 handleScrollingIntoDeliverySection();
 handleOpenOrdersModal();
 handleOpenDeliveryModal();
+handleAddOrderModal();
+handleAddDeliveryModal();
 
 const ordersItem = document.querySelectorAll(".orders-item");
 const deliveryItem = document.querySelectorAll(".delivery-item");

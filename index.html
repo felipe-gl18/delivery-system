@@ -60,14 +60,14 @@
       </section>
       <section class="orders-relation">
         <div>
-          <div class="section-title">
+          <div>
             <p>RELAÇÃO DE PEDIDOS</p>
-            <button>Criar pedido</button>
+            <div class="lines">
+              <div id="orders-relation-first-line"></div>
+              <div id="orders-relation-second-line"></div>
+            </div>
           </div>
-          <div class="lines">
-            <div id="orders-relation-first-line"></div>
-            <div id="orders-relation-second-line"></div>
-          </div>
+          <button>Criar pedido <img src="./assets/Plus.png" alt="" /></button>
         </div>
         <section class="orders">
           <div class="orders-item">
@@ -134,11 +134,16 @@
       </section>
       <section class="delivery-relation">
         <div>
-          <p>RELAÇÃO DE ENTREGADORES</p>
-          <div class="lines">
-            <div id="orders-relation-first-line"></div>
-            <div id="orders-relation-second-line"></div>
+          <div>
+            <p>RELAÇÃO DE ENTREGADORES</p>
+            <div class="lines">
+              <div id="delivery-relation-first-line"></div>
+              <div id="delivery-relation-second-line"></div>
+            </div>
           </div>
+          <button>
+            Adicionar entregador <img src="./assets/Plus.png" alt="" />
+          </button>
         </div>
         <section class="delivery">
           <div class="delivery-item">
@@ -217,6 +222,13 @@
             <p>ENTREGADOR</p>
             <span>Francisco Tiago Gadelha Lino</span>
           </div>
+          <div class="orders-item-details">
+            <p>DETALHES</p>
+            <span
+              >Pizza completa de catupiri, Coca cola-2l, 4 coxinhas de
+              frango.</span
+            >
+          </div>
           <div class="orders-item-price">
             <p>VALOR</p>
             <span>R$ 150,23</span>
@@ -241,6 +253,76 @@
             <p>TOTAL PARAf RECEBER</p>
             <span>R$ 150,23</span>
           </div>
+        </div>
+      </section>
+      <section class="add-order-modal">
+        <div class="add-order-modal-content">
+          <section class="add-order-modal-close-anchor">
+            <img src="./assets/close-menu.png" alt="" srcset="" />
+          </section>
+          <div class="order-address-field">
+            <label for="order-address-value">Endereço</label>
+            <input
+              type="text"
+              name=""
+              id="order-address-value"
+              class="order-address-value"
+            />
+          </div>
+          <div class="order-delivery-field">
+            <label for="order-delivery-value">Entregador</label>
+            <input
+              type="text"
+              name=""
+              id="order-delivery-value"
+              class="order-address-value"
+            />
+          </div>
+          <div class="order-price-field">
+            <label for="order-price-value">Preço</label>
+            <input
+              type="text"
+              name=""
+              id="order-price-value"
+              class="order-price-value"
+            />
+          </div>
+          <button class="order-button">Criar pedido</button>
+        </div>
+      </section>
+      <section class="add-delivery-modal">
+        <div class="add-delivery-modal-content">
+          <section class="add-delivery-modal-close-anchor">
+            <img src="./assets/close-menu.png" alt="" srcset="" />
+          </section>
+          <div class="delivery-name-field">
+            <label for="delivery-name-value">Nome</label>
+            <input
+              type="text"
+              name=""
+              id="delivery-name-value"
+              class="delivery-name-value"
+            />
+          </div>
+          <div class="delivery-email-field">
+            <label for="delivery-email-value">Email</label>
+            <input
+              type="text"
+              name=""
+              id="delivery-email-value"
+              class="delivery-email-value"
+            />
+          </div>
+          <div class="delivery-contact-field">
+            <label for="delivery-contact-value">Contato</label>
+            <input
+              type="text"
+              name=""
+              id="delivery-contact-value"
+              class="delivery-contact-value"
+            />
+          </div>
+          <button class="delivery-button">Adicionar entregador</button>
         </div>
       </section>
     </main>

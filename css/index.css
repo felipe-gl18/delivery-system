@@ -15,6 +15,10 @@ body {
     padding: 0px 0px 0px 0px;
 }
 
+button {
+    cursor: pointer;
+}
+
 nav {
     display: flex;
     align-items: center;
@@ -167,37 +171,82 @@ main > .orders-relation {
     gap: 32px;
 }
 
-.orders-relation > div > .lines {
+.orders-relation > div {
+    gap: 78px;
+    display: flex;
+    align-items: center;
+}
+
+
+.orders-relation > div > button {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-variation-settings:
+      "slnt" 0;
+   outline: none;
+   padding: 10px 20px 10px 20px;
+   border-radius: 50px;
+   border: 2px solid #329a747e;
+}
+
+.orders-relation > div > div > .lines {
     display: flex;
     gap: 10px
 }
-.orders-relation > div > .lines > #orders-relation-first-line {
+.orders-relation > div > div > .lines > #orders-relation-first-line {
     margin-top: 10px;
     height: 1px;
     width: 110px;
     background-color: black;
 }
 
-.orders-relation > div > .lines > #orders-relation-second-line {
+.orders-relation > div > div >  .lines > #orders-relation-second-line {
     margin-top: 10px;
     height: 1px;
     width: 56px;
     background-color: black;
 }
 
+.delivery-relation > div {
+    gap: 78px;
+    display: flex;
+    align-items: center;
+}
 
-.delivery-relation > div > .lines {
+
+.delivery-relation > div > button {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-variation-settings:
+      "slnt" 0;
+   outline: none;
+   padding: 10px 20px 10px 20px;
+   border-radius: 50px;
+   border: 2px solid #329a747e;
+}
+
+.delivery-relation > div > div > .lines {
     display: flex;
     gap: 10px
 }
-.delivery-relation > div > .lines > #orders-relation-first-line {
+.delivery-relation > div > div > .lines > #orders-relation-first-line {
     margin-top: 10px;
     height: 1px;
     width: 172px;
     background-color: black;
 }
 
-.delivery-relation > div > .lines > #orders-relation-second-line {
+.delivery-relation > div > div >  .lines > #orders-relation-second-line {
     margin-top: 10px;
     height: 1px;
     width: 56px;
@@ -375,11 +424,19 @@ main > .delivery-relation {
     height: 29px;
     border-radius: 50%;
     background-color: black;
+    cursor: pointer;
 }
+
 
 .modal-close-anchor > img {
     width: 60%;
     height: 60%;
+    transition: 0.4s ease-in-out;
+}
+
+.modal-close-anchor > img:hover{
+    width: 50%;
+    height: 50%
 }
 
 
@@ -397,7 +454,272 @@ main > .delivery-relation {
 .modal-delivery-close-anchor > img {
     width: 60%;
     height: 60%;
+    transition: 0.4s ease-in-out;
 }
+
+.modal-delivery-close-anchor > img:hover {
+    width: 50%;
+    height: 50%;
+}
+
+.add-order-modal {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.226);
+    height: 100%;
+    z-index: 3;
+    animation: modalAnimation 1s ease-in-out;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-variation-settings:
+      "slnt" 0;
+}
+
+.add-order-modal-content {
+    width: 462px;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px 40px 26px 40px;
+    gap: 20px;   
+    background-color: white;
+    border-radius: 5px;
+}
+
+.add-order-modal-close-anchor {
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 29px;
+    height: 29px;
+    border-radius: 50%;
+    background-color: black;
+}
+
+.add-order-modal-close-anchor  > img{
+    width: 60%;
+    height: 60%;
+    transition: 0.4s ease-in-out ;
+}
+
+
+.add-order-modal-close-anchor  > img:hover{
+    width: 50%;
+    height: 50%;
+}
+
+.add-delivery-modal-close-anchor {
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 29px;
+    height: 29px;
+    border-radius: 50%;
+    background-color: black;
+}
+
+.add-delivery-modal-close-anchor  > img{
+    width: 60%;
+    height: 60%;
+    transition: 0.4s ease-in-out ;
+}
+
+.add-delivery-modal-close-anchor  > img:hover{
+    width: 50%;
+    height: 50%;
+}
+
+.order-address-field {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.order-address-field > input{
+    height: 32px;
+    outline: none;
+    padding-left: 4px;
+    border: none;
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.274);
+}
+
+.order-delivery-field {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.order-delivery-field > input{
+    height: 32px;
+    outline: none;
+    padding-left: 4px;
+    border: none;
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.274);
+}
+
+
+.order-price-field {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.order-price-field > input{
+    height: 32px;
+    outline: none;
+    padding-left: 4px;
+    border: none;
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.274);
+}
+
+.order-button {
+    font-weight: 900;
+    color: rgba(0, 0, 0, 0.74);
+    margin-top: 32px;
+    background-color: white;
+    outline: none;
+    padding: 10px 20px 10px 20px;
+    border-radius: 50px;
+    border: 2px solid #329a74;
+    width: 150px;
+    transition: 0.4s ease-in-out;
+}
+
+.order-button:hover{
+    background-color: #329a7e;
+    color: white;
+}
+
+.add-delivery-modal {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.226);
+    height: 100%;
+    z-index: 3;
+    animation: modalAnimation 1s ease-in-out;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-variation-settings:
+      "slnt" 0;
+
+}
+
+.add-delivery-modal-content {
+    width: 462px;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px 40px 26px 40px;
+    gap: 20px;   
+    background-color: white;
+    border-radius: 5px;
+}
+
+.add-delivery-modal-close-anchor {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 29px;
+    height: 29px;
+    border-radius: 50%;
+    background-color: black;
+}
+
+.add-delivery-modal-close-anchor  > img{
+    width: 60%;
+    height: 60%;
+}
+
+.delivery-name-field {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.delivery-name-field > input{
+    height: 32px;
+    outline: none;
+    padding-left: 4px;
+    border: none;
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.274);
+}
+
+.delivery-email-field {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.delivery-email-field > input{
+    height: 32px;
+    outline: none;
+    padding-left: 4px;
+    border: none;
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.274);
+}
+
+
+.delivery-contact-field {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.delivery-contact-field > input{
+    height: 32px;
+    outline: none;
+    padding-left: 4px;
+    border: none;
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.274);
+}
+
+.delivery-button {
+    font-weight: 900;
+    color: rgba(0, 0, 0, 0.74);
+    margin-top: 32px;
+    background-color: white;
+    outline: none;
+    border: solid 2px #329A74;
+    padding: 10px 20px 10px 20px;
+    border-radius: 50px;
+    border: 2px solid #329a74;
+    width: 250px;
+    transition: 0.4s ease-in-out;
+
+}
+
+.delivery-button:hover{
+    background-color: #329a74;
+    color: white;
+}
+
 
 footer{
     display: flex;
