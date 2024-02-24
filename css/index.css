@@ -204,6 +204,15 @@ main > .orders-relation {
     background-color: black;
 }
 
+.section-title {
+    display: flex;
+    align-items: center;
+}
+
+.section-title > button {
+    height: 44px;
+}
+
 .orders-item {
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
