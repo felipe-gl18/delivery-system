@@ -9,11 +9,15 @@ import { HandleOpenNavbarAction } from "../handle-navbar-actions/handle-open-nav
 import { HandleDeliverySectionClickEvent } from "../handle-section-items-click-events/handleDeliverySectionClickEvent.js";
 import { HandleOrdersSectionClickEvent } from "../handle-section-items-click-events/handleOrdersSectionClickEvent.js";
 import { HandleChartCreation } from "../handle-chart-creation/handle-chart-creation.js";
+import { HandleOrderCreation } from "../handle-order-creation/handleOrderCreation.js";
 
 export class Factory {
   constructor() {}
 
   init() {
+    const handleOrderCreation = new HandleOrderCreation();
+    handleOrderCreation.listenToOrderFormSubmit();
+
     const handleOrderDetailsModal = new HandleOrderDetailsModal();
     handleOrderDetailsModal.handler();
 
