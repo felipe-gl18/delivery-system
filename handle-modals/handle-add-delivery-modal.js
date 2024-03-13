@@ -1,21 +1,29 @@
 export class HandleAddDeliveryModal {
-  constructor() {}
-
-  handler() {
-    const addDeliveryModal = document.querySelector(".add-delivery-modal");
-    const openAddDeliveryModal = document.querySelector(
+  constructor() {
+    this.addDeliveryModal = document.querySelector(".add-delivery-modal");
+    this.openAddDeliveryModal = document.querySelector(
       ".delivery-relation > div > button"
     );
-    const closeAddDeliveryModal = document.querySelector(
+    this.closeAddDeliveryModal = document.querySelector(
       ".add-delivery-modal-close-anchor"
     );
+  }
 
-    openAddDeliveryModal.addEventListener("click", () => {
-      addDeliveryModal.style.display = "flex";
+  open() {
+    this.addDeliveryModal.style.display = "flex";
+  }
+
+  close() {
+    this.addDeliveryModal.style.display = "none";
+  }
+
+  handler() {
+    this.openAddDeliveryModal.addEventListener("click", () => {
+      this.open();
     });
 
-    closeAddDeliveryModal.addEventListener("click", () => {
-      addDeliveryModal.style.display = "none";
+    this.closeAddDeliveryModal.addEventListener("click", () => {
+      this.close();
     });
   }
 }

@@ -1,3 +1,6 @@
+import { HandleAddOrderModal } from "../handle-modals/handle-add-order-modal.js";
+import { HandleScrollingToOrderSection } from "../handle-scrolling-to-sections/handle-scrolling-to-orders-section.js";
+
 export class HandleOrderCreation {
   constructor() {
     this.orderForm = document.querySelector(".add-order-modal>div>button");
@@ -75,13 +78,34 @@ export class HandleOrderCreation {
     orders.appendChild(newOrder);
   }
 
+  isValidated(valuesFromForm) {
+    const { address, delivery, price } = valuesFromForm;
+    if ((address.length != 5, delivery.length != 0, price != 0)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   listenToOrderFormSubmit() {
     this.orderForm.addEventListener("click", () => {
-      this.create({
-        address: document.querySelector(".order-address-value").value,
-        delivery: document.querySelector(".order-delivery-value").value,
-        price: document.querySelector(".order-price-value").value,
-      });
+      const address = document.querySelector(".order-address-value").value;
+      const delivery = document.querySelector(".order-delivery-value").value;
+      const price = document.querySelector(".order-price-value").value;
+
+      const isValidated = this.isValidated({ address, delivery, price });
+
+      const handleAddOrderModal = new HandleAddOrderModal();
+      const handleScrollingToOrdersSection =
+        new HandleScrollingToOrderSection();
+
+      if (isValidated) {
+        this.create({ address, delivery, price });
+        handleAddOrderModal.close();
+        handleScrollingToOrdersSection.scroll();
+      } else {
+        alert("Preencha os campos corretamente!");
+      }
     });
   }
 }

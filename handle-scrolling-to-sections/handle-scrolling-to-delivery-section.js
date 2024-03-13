@@ -1,14 +1,19 @@
 export class HandleScrollingToDeliverySection {
-  constructor() {}
+  constructor() {
+    this.deliveryRelation = document.querySelector(".delivery-relation");
+  }
+
+  scroll() {
+    this.deliveryRelation.scrollIntoView({ behavior: "smooth" });
+  }
 
   handler() {
     const deliveryRelationNav = document.querySelector(
       ".delivery-relation-nav"
     );
-    const deliveryRelation = document.querySelector(".delivery-relation");
 
     deliveryRelationNav.addEventListener("click", () => {
-      deliveryRelation.scrollIntoView({ behavior: "smooth" });
+      this.scroll();
     });
   }
 }

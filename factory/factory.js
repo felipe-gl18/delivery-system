@@ -10,13 +10,32 @@ import { HandleDeliverySectionClickEvent } from "../handle-section-items-click-e
 import { HandleOrdersSectionClickEvent } from "../handle-section-items-click-events/handleOrdersSectionClickEvent.js";
 import { HandleChartCreation } from "../handle-chart-creation/handle-chart-creation.js";
 import { HandleOrderCreation } from "../handle-order-creation/handleOrderCreation.js";
+import { HandleDeliveryManCreation } from "../handlle-deliveryman-creation/handleDeliverymanCreation.js";
 
 export class Factory {
   constructor() {}
 
+  async ordersList() {
+    const handleOrderCreation = new HandleOrderCreation();
+
+    const ordersJSONData = await fetch("/delivery-system/orders/orders.json");
+    const response = await ordersJSONData.json();
+
+    response.forEach((data) => {
+      handleOrderCreation.create({
+        address: data.address,
+        delivery: data.deliveryman,
+        price: data.price,
+      });
+    });
+  }
+
   init() {
     const handleOrderCreation = new HandleOrderCreation();
     handleOrderCreation.listenToOrderFormSubmit();
+
+    const handleDeliverymanCreation = new HandleDeliveryManCreation();
+    handleDeliverymanCreation.listenToDeliverymanSubmit();
 
     const handleOrderDetailsModal = new HandleOrderDetailsModal();
     handleOrderDetailsModal.handler();

@@ -1,0 +1,29 @@
+[{
+    "address": "Rua Marrinha Paiva, Bairro Sinhá Sabóia, n 362",
+    "deliveryman": "Felipe Gadelha Lino",
+    "price": "R$ 123, 10"
+}, {
+    "address": "Rua Sinhá Sabóia Paiva, Bairro Sinhá Sabóia, n 162",
+    "deliveryman": "Francisco Thiago Gadelha Lino",
+    "price": "R$ 223, 10"
+}, {
+    "address": "Rua Belém, Bairro Sinhá Sabóia, n 001",
+    "deliveryman": "Felipe Gadelha Lino",
+    "price": "R$ 123, 10"
+}, {
+    "address": "Rua Junco Paiva, Bairro Junco, n 022",
+    "deliveryman": "Carlos Sousa Amarão",
+    "price": "R$ 23, 10"
+}, {
+    "address": "Rua Natal Paiva, Bairro Sinhá Sabóia, n 362",
+    "deliveryman": "Luan Cardoso Júnior",
+    "price": "R$ 323, 10"
+}, {
+    "address": "Rua da Praça Evangelina Paiva, Bairro Siinhá Sabóia, em frente a padaria Estela",
+    "deliveryman": "Felipe Gadelha Lino",
+    "price": "R$ 123, 10"
+}, {
+    "address": "Rua Marrinha Paiva, Bairro Siinhá Sabóia, n 362",
+    "deliveryman": "Francisco Thiago Gadelha Lino",
+    "price": "R$ 103, 25"
+}]

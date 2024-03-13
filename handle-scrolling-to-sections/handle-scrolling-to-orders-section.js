@@ -1,12 +1,17 @@
 export class HandleScrollingToOrderSection {
-  constructor() {}
+  constructor() {
+    this.ordersRelation = document.querySelector(".orders-relation");
+  }
+
+  scroll() {
+    this.ordersRelation.scrollIntoView({ behavior: "smooth" });
+  }
 
   handler() {
-    const ordersRelation = document.querySelector(".orders-relation");
     const ordersRelationNav = document.querySelector(".orders-relation-nav");
 
     ordersRelationNav.addEventListener("click", () => {
-      ordersRelation.scrollIntoView({ behavior: "smooth" });
+      this.scroll();
     });
   }
 }

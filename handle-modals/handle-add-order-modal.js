@@ -1,21 +1,29 @@
 export class HandleAddOrderModal {
-  constructor() {}
-
-  handler() {
-    const addOrderModal = document.querySelector(".add-order-modal");
-    const openAddOrderModal = document.querySelector(
-      ".orders-relation > div > button"
-    );
-    const closeAddOrderModal = document.querySelector(
+  constructor() {
+    this.addOrderModal = document.querySelector(".add-order-modal");
+    this.closeAddOrderModal = document.querySelector(
       ".add-order-modal-close-anchor"
     );
+    this.openAddOrderModal = document.querySelector(
+      ".orders-relation > div > button"
+    );
+  }
 
-    openAddOrderModal.addEventListener("click", () => {
-      addOrderModal.style.display = "flex";
+  open() {
+    this.addOrderModal.style.display = "flex";
+  }
+
+  close() {
+    this.addOrderModal.style.display = "none";
+  }
+
+  handler() {
+    this.openAddOrderModal.addEventListener("click", () => {
+      this.open();
     });
 
-    closeAddOrderModal.addEventListener("click", () => {
-      addOrderModal.style.display = "none";
+    this.closeAddOrderModal.addEventListener("click", () => {
+      this.close();
     });
   }
 }
