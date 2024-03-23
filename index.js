@@ -3,5 +3,6 @@ import { Factory } from "./factory/factory.js";
 const factory = new Factory();
 
 await factory.ordersList();
+await factory.addingDeliveryMansOptions();
 
 factory.init();

@@ -30,6 +30,21 @@ export class Factory {
     });
   }
 
+  async addingDeliveryMansOptions() {
+    const handleOrderCreation = new HandleOrderCreation();
+
+    const deliverymansJSONData = await fetch(
+      "/delivery-system/deliverymans/deliverymans.json"
+    );
+    const response = await deliverymansJSONData.json();
+
+    response.forEach((data) => {
+      document.querySelector(
+        ".order-delivery-value"
+      ).innerHTML += `<option value="${data.name}">${data.name}</option>`;
+    });
+  }
+
   init() {
     const handleOrderCreation = new HandleOrderCreation();
     handleOrderCreation.listenToOrderFormSubmit();

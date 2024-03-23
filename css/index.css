@@ -462,6 +462,14 @@ main > .delivery-relation {
     height: 50%;
 }
 
+.order-delivery-value{
+    height: 32px;
+    outline: none;
+    padding-left: 4px;
+    border: none;
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.274);
+}
+
 .add-order-modal {
     display: none;
     justify-content: center;
