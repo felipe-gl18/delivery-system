@@ -59,7 +59,7 @@
         </div>
       </section>
       <section class="orders-relation">
-        <div>
+        <div id="orders-labled-and-button">
           <div>
             <p>RELAÇÃO DE PEDIDOS</p>
             <div class="lines">
@@ -80,75 +80,11 @@
               <div id="delivery-relation-second-line"></div>
             </div>
           </div>
-          <button>
-            Adicionar entregador <img src="./assets/Plus.png" alt="" />
-          </button>
         </div>
-        <section class="delivery">
-          <div class="delivery-item">
-            <img src="./assets/user.png" alt="" />
-            <div class="delivery-item-name">
-              <p>ENTREGADOR</p>
-              <span>Francisco Tiago Gadelha Lino</span>
-            </div>
-            <div class="delivery-item-deliveries">
-              <p>TOTAL DE ENTREGAS</p>
-              <span>22</span>
-            </div>
-            <div class="delivery-item-price">
-              <p>TOTAL PARA RECEBER</p>
-              <span>R$ 187,23</span>
-            </div>
-          </div>
-          <div class="delivery-item">
-            <img src="./assets/user.png" alt="" />
-            <div class="delivery-item-address">
-              <p>ENTREGADOR</p>
-              <span>Darlan Henrique Afonso</span>
-            </div>
-            <div class="delivery-item-delivery">
-              <p>TOTAL DE ENTREGAS</p>
-              <span>12</span>
-            </div>
-            <div class="delivery-item-price">
-              <p>TOTAL PARA RECEBER</p>
-              <span>R$ 231,23</span>
-            </div>
-          </div>
-          <div class="delivery-item">
-            <img src="./assets/user.png" alt="" />
-            <div class="delivery-item-address">
-              <p>ENTREGADOR</p>
-              <span>Felipe Gadelha Lino</span>
-            </div>
-            <div class="delivery-item-delivery">
-              <p>TOTAL DE ENTREGAS</p>
-              <span>09</span>
-            </div>
-            <div class="delivery-item-price">
-              <p>TOTAL PARA RECEBER</p>
-              <span>R$ 112,23</span>
-            </div>
-          </div>
-          <div class="delivery-item">
-            <img src="./assets/user.png" alt="" />
-            <div class="delivery-item-address">
-              <p>ENTREGADOR</p>
-              <span>Roberto Sousa Amarão</span>
-            </div>
-            <div class="delivery-item-delivery">
-              <p>TOTAL DE ENTREGAS</p>
-              <span>05</span>
-            </div>
-            <div class="delivery-item-price">
-              <p>TOTAL PARA RECEBER</p>
-              <span>R$ 154,23</span>
-            </div>
-          </div>
-        </section>
+        <section class="delivery"></section>
       </section>
       <section class="modal">
-        <div class="orders-item">
+        <div class="modal-orders-item">
           <section class="modal-close-anchor">
             <img src="./assets/close-menu.png" alt="" srcset="" />
           </section>
@@ -175,7 +111,7 @@
         </div>
       </section>
       <section class="modal-delivery">
-        <div class="delivery-item">
+        <div class="modal-delivery-item">
           <section class="modal-delivery-close-anchor">
             <img src="./assets/close-menu.png" alt="" srcset="" />
           </section>
@@ -210,10 +146,19 @@
           </div>
           <div class="order-delivery-field">
             <label for="order-delivery-value">Entregador</label>
-            <select name="cars" id="cars" id="order-delivery-value"
-            class="order-delivery-value">
-              
-            </select>
+            <select
+              id="order-delivery-value"
+              class="order-delivery-value"
+            ></select>
+          </div>
+          <div class="order-details-field">
+            <label for="order-details-value">Detalhes do pedido</label>
+            <input
+              type="text"
+              name=""
+              id="order-details-value"
+              class="order-details-value"
+            />
           </div>
           <div class="order-price-field">
             <label for="order-price-value">Preço</label>

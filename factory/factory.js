@@ -10,10 +10,41 @@ import { HandleDeliverySectionClickEvent } from "../handle-section-items-click-e
 import { HandleOrdersSectionClickEvent } from "../handle-section-items-click-events/handleOrdersSectionClickEvent.js";
 import { HandleChartCreation } from "../handle-chart-creation/handle-chart-creation.js";
 import { HandleOrderCreation } from "../handle-order-creation/handleOrderCreation.js";
-import { HandleDeliveryManCreation } from "../handlle-deliveryman-creation/handleDeliverymanCreation.js";
+import { HandleDeliveryManCreation } from "../handle-delivery-creation/handleDeliveryCreation.js";
 
 export class Factory {
   constructor() {}
+
+  getDeliverymansAtLocalStorage() {
+    return JSON.parse(localStorage.getItem("deliverymans"));
+  }
+
+  saveDeliverymansAtLocalStorage(deliverymans) {
+    localStorage.setItem("deliverymans", JSON.stringify(deliverymans));
+  }
+
+  getOrdersAtLocalStorage() {
+    return JSON.parse(localStorage.getItem("orders"));
+  }
+
+  saveOrdersAtLocalStorage(orders) {
+    localStorage.setItem("orders", JSON.stringify(orders));
+  }
+
+  async deliverymansList() {
+    const handleDeliveryCreation = new HandleDeliveryManCreation();
+
+    const deliverymansJSONData = await fetch(
+      "/delivery-system/deliverymans/deliverymans.json"
+    );
+    const response = await deliverymansJSONData.json();
+
+    this.saveDeliverymansAtLocalStorage(response);
+
+    const deliverymans = this.getDeliverymansAtLocalStorage();
+
+    handleDeliveryCreation.listDeliverymans(deliverymans);
+  }
 
   async ordersList() {
     const handleOrderCreation = new HandleOrderCreation();
@@ -21,13 +52,11 @@ export class Factory {
     const ordersJSONData = await fetch("/delivery-system/orders/orders.json");
     const response = await ordersJSONData.json();
 
-    response.forEach((data) => {
-      handleOrderCreation.create({
-        address: data.address,
-        delivery: data.deliveryman,
-        price: data.price,
-      });
-    });
+    this.saveOrdersAtLocalStorage(response);
+
+    const orders = this.getOrdersAtLocalStorage();
+
+    handleOrderCreation.listOrders(orders);
   }
 
   async addingDeliveryMansOptions() {
@@ -60,9 +89,6 @@ export class Factory {
 
     const handleAddOrderModal = new HandleAddOrderModal();
     handleAddOrderModal.handler();
-
-    const handleAddDeliveryModal = new HandleAddDeliveryModal();
-    handleAddDeliveryModal.handler();
 
     const handleScrollingToOrdersSection = new HandleScrollingToOrderSection();
     handleScrollingToOrdersSection.handler();

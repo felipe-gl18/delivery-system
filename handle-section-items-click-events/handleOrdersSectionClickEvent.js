@@ -1,3 +1,5 @@
+import { Factory } from "../factory/factory.js";
+
 export class HandleOrdersSectionClickEvent {
   constructor() {}
 
@@ -6,21 +8,24 @@ export class HandleOrdersSectionClickEvent {
 
     ordersItem.forEach((data) => {
       data.addEventListener("click", () => {
-        let address = data.querySelector(
-          ".orders-item-address > span"
-        ).innerHTML;
-        let delivery = data.querySelector(
-          ".orders-item-delivery > span"
-        ).innerHTML;
-        let price = data.querySelector(".orders-item-price > span").innerHTML;
+        const factory = new Factory();
+        const orders = factory.getOrdersAtLocalStorage();
 
-        let modalContent = document.querySelector(".modal > .orders-item");
+        let id = data.querySelector(".orders-item-id > span").innerHTML;
+
+        const filteredOrder = orders.filter((order) => order.id == id)[0];
+
+        let modalContent = document.querySelector(
+          ".modal > .modal-orders-item"
+        );
         modalContent.querySelector(".orders-item-address > span").innerHTML =
-          address;
+          filteredOrder.address;
         modalContent.querySelector(".orders-item-delivery > span").innerHTML =
-          delivery;
+          filteredOrder.deliveryman;
         modalContent.querySelector(".orders-item-price > span").innerHTML =
-          price;
+          filteredOrder.price;
+        modalContent.querySelector(".orders-item-details > span").innerHTML =
+          filteredOrder.details;
 
         document.querySelector(".modal").style.display = "flex";
       });

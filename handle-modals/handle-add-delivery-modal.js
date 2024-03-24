@@ -16,14 +16,4 @@ export class HandleAddDeliveryModal {
   close() {
     this.addDeliveryModal.style.display = "none";
   }
-
-  handler() {
-    this.openAddDeliveryModal.addEventListener("click", () => {
-      this.open();
-    });
-
-    this.closeAddDeliveryModal.addEventListener("click", () => {
-      this.close();
-    });
-  }
 }

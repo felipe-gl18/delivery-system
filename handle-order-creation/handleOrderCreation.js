@@ -1,3 +1,4 @@
+import { Factory } from "../factory/factory.js";
 import { HandleAddOrderModal } from "../handle-modals/handle-add-order-modal.js";
 import { HandleScrollingToOrderSection } from "../handle-scrolling-to-sections/handle-scrolling-to-orders-section.js";
 
@@ -28,19 +29,19 @@ export class HandleOrderCreation {
     return address;
   }
 
-  generateOrderDelivery(value) {
-    const delivery = document.createElement("div");
-    const deliveryLabel = document.createElement("p");
-    const deliveryValue = document.createElement("span");
+  generateOrderdeliveryman(value) {
+    const deliveryman = document.createElement("div");
+    const deliverymanLabel = document.createElement("p");
+    const deliverymanValue = document.createElement("span");
 
-    delivery.className = "orders-item-delivery";
-    deliveryLabel.innerText = "ENTREGADOR";
-    deliveryValue.innerText = `${value}`;
+    deliveryman.className = "orders-item-deliveryman";
+    deliverymanLabel.innerText = "ENTREGADOR";
+    deliverymanValue.innerText = `${value}`;
 
-    delivery.appendChild(deliveryLabel);
-    delivery.appendChild(deliveryValue);
+    deliveryman.appendChild(deliverymanLabel);
+    deliveryman.appendChild(deliverymanValue);
 
-    return delivery;
+    return deliveryman;
   }
 
   generateValue(value) {
@@ -58,29 +59,94 @@ export class HandleOrderCreation {
     return price;
   }
 
-  create(props) {
+  generateOrderDetails(value) {
+    const details = document.createElement("div");
+    const detailsLabel = document.createElement("p");
+    const detailsValue = document.createElement("span");
+
+    details.className = "orders-item-details";
+    detailsLabel.innerText = "Detalhes do pedido";
+    detailsValue.innerText = `${value}`;
+
+    details.appendChild(detailsLabel);
+    details.appendChild(detailsValue);
+
+    return details;
+  }
+
+  generateOrderID(value) {
+    const id = document.createElement("div");
+    const idLabel = document.createElement("p");
+    const idValue = document.createElement("span");
+
+    id.className = "orders-item-id";
+    idLabel.innerText = "ID do pedido";
+    idValue.innerText = `${value}`;
+
+    id.appendChild(idLabel);
+    id.appendChild(idValue);
+
+    return id;
+  }
+
+  listOrders(data) {
     const orders = document.querySelector(".orders");
 
-    const newOrder = document.createElement("div");
+    orders.innerHTML = "";
 
-    const orderImage = this.generateOrderImage();
-    const address = this.generateOrderAddress(props.address);
-    const delivery = this.generateOrderDelivery(props.delivery);
-    const price = this.generateValue(props.price);
+    data.forEach((props) => {
+      const newOrder = document.createElement("div");
 
-    newOrder.className = "orders-item";
+      const orderImage = this.generateOrderImage();
+      const address = this.generateOrderAddress(props.address);
+      const deliveryman = this.generateOrderdeliveryman(props.deliveryman);
+      const details = this.generateOrderDetails(props.details);
+      const id = this.generateOrderID(props.id);
+      const price = this.generateValue(props.price);
 
-    newOrder.appendChild(orderImage);
-    newOrder.appendChild(address);
-    newOrder.appendChild(delivery);
-    newOrder.appendChild(price);
+      newOrder.className = "orders-item";
 
-    orders.appendChild(newOrder);
+      newOrder.appendChild(orderImage);
+      newOrder.appendChild(address);
+      newOrder.appendChild(deliveryman);
+      newOrder.appendChild(id);
+      newOrder.appendChild(price);
+
+      orders.appendChild(newOrder);
+    });
+  }
+
+  create(props) {
+    const address = props.address;
+    const deliveryman = props.deliveryman;
+    const price = props.price;
+    const details = props.details;
+
+    const factory = new Factory();
+    const ordersFromLocalStorage = factory.getOrdersAtLocalStorage();
+    ordersFromLocalStorage.push({
+      address,
+      deliveryman,
+      price,
+      details,
+      id: `${
+        Number(ordersFromLocalStorage[ordersFromLocalStorage.length - 1].id) + 1
+      }`,
+    });
+
+    localStorage.setItem("orders", JSON.stringify(ordersFromLocalStorage));
+
+    this.listOrders(ordersFromLocalStorage);
   }
 
   isValidated(valuesFromForm) {
-    const { address, delivery, price } = valuesFromForm;
-    if ((address.length != 5, delivery.length != 0, price != 0)) {
+    const { address, deliveryman, price, details } = valuesFromForm;
+    if (
+      (address.length != 5,
+      deliveryman.length != 0,
+      price != 0,
+      details.length != 5)
+    ) {
       return true;
     } else {
       return false;
@@ -90,17 +156,25 @@ export class HandleOrderCreation {
   listenToOrderFormSubmit() {
     this.orderForm.addEventListener("click", () => {
       const address = document.querySelector(".order-address-value").value;
-      const delivery = document.querySelector(".order-delivery-value").value;
+      const deliveryman = document.querySelector(
+        ".order-deliveryman-value"
+      ).value;
       const price = document.querySelector(".order-price-value").value;
+      const details = document.querySelector(".order-details-value").value;
 
-      const isValidated = this.isValidated({ address, delivery, price });
+      const isValidated = this.isValidated({
+        address,
+        deliveryman,
+        price,
+        details,
+      });
 
       const handleAddOrderModal = new HandleAddOrderModal();
       const handleScrollingToOrdersSection =
         new HandleScrollingToOrderSection();
 
       if (isValidated) {
-        this.create({ address, delivery, price });
+        this.create({ address, deliveryman, price, details });
         handleAddOrderModal.close();
         handleScrollingToOrdersSection.scroll();
       } else {

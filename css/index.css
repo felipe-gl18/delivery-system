@@ -168,6 +168,7 @@ main > .orders-relation {
     margin-top: 49px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: center;
     gap: 32px;
 }
 
@@ -209,6 +210,24 @@ main > .orders-relation {
     margin-top: 10px;
     height: 1px;
     width: 56px;
+    background-color: black;
+}
+
+.delivery-relation > div > div > .lines {
+    display: flex;
+    gap: 10px
+}
+.delivery-relation > div > div > .lines > #delivery-relation-first-line {
+    margin-top: 10px;
+    height: 1px;
+    width: 140px;
+    background-color: black;
+}
+
+.delivery-relation > div > div >  .lines > #delivery-relation-second-line {
+    margin-top: 10px;
+    height: 1px;
+    width: 86px;
     background-color: black;
 }
 
@@ -311,6 +330,57 @@ main > .orders-relation {
     color: #329A74;
 }
 
+
+
+.modal-orders-item {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-variation-settings:
+      "slnt" 0;
+    padding: 17px 22px 32px 22px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 11px;
+    width: 306px;
+    font-size: 12px;
+    flex-direction: column;
+    transition: 1s;
+}
+
+.modal-orders-item:hover {
+    transform: translate(0px, -12px);
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
+
+}
+
+.modal-orders-item > img {
+    margin: 17px 0px 17px 0px;
+    width: 88px;
+    height: 88px;
+}
+
+.modal-orders-item > div {
+    width: 96%;
+   display: flex;
+   flex-direction: column;
+   gap: 6px
+}
+
+.modal-orders-item > div > span {
+    opacity: 0.6;
+}
+
+.orders-item-price > span {
+    opacity: 1;
+    margin-top: 11px;
+    font-size: 18px;
+    color: #329A74;
+}
+
 main > .delivery-relation {
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
@@ -325,6 +395,7 @@ main > .delivery-relation {
     margin-top: 49px;
     display: grid;
     grid-template-columns: 306px 306px 306px 306px;
+    justify-content: center;
     gap: 32px;
 }
 
@@ -581,6 +652,19 @@ main > .delivery-relation {
     border-bottom: 0.5px solid rgba(0, 0, 0, 0.274);
 }
 
+.order-details-field {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.order-details-field > input {
+    height: 32px;
+    outline: none;
+    padding-left: 4px;
+    border: none;
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.274);
+}
 
 .order-price-field {
     display: flex;
@@ -728,6 +812,11 @@ main > .delivery-relation {
     color: white;
 }
 
+#orders-labled-and-button{
+    display: flex;
+    align-items: center;
+}
+
 
 footer{
     display: flex;
@@ -863,6 +952,15 @@ footer{
     }
     .navigation-menu-anchor {
         display: flex;
+    }
+}
+
+@media screen and (max-width: 460px){
+    #orders-labled-and-button{
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        align-items: flex-start;
     }
 }
 
