@@ -9,7 +9,7 @@ export class HandleOrderCreation {
 
   generateOrderImage() {
     const orderImage = document.createElement("img");
-    orderImage.src = "./assets/food.png";
+    orderImage.src = "./delivery-system/assets/food.png";
 
     return orderImage;
   }
@@ -156,9 +156,7 @@ export class HandleOrderCreation {
   listenToOrderFormSubmit() {
     this.orderForm.addEventListener("click", () => {
       const address = document.querySelector(".order-address-value").value;
-      const deliveryman = document.querySelector(
-        ".order-deliveryman-value"
-      ).value;
+      const deliveryman = document.querySelector(".order-delivery-value").value;
       const price = document.querySelector(".order-price-value").value;
       const details = document.querySelector(".order-details-value").value;
 

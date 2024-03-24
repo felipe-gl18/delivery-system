@@ -11,7 +11,7 @@ export class HandleDeliveryManCreation {
 
   generateDeliverymanImage() {
     const deliverymanImage = document.querySelector("img");
-    deliverymanImage.src = "./assets/user.png";
+    deliverymanImage.src = "./delivery-system/assets/user.png";
 
     return deliverymanImage;
   }
